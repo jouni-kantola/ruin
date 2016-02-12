@@ -39,7 +39,8 @@ module.exports = function() {
         }
     }
 
-    // TODO: sort by length
+    // Shortest names first
+    classNames.sort((a, b) => a.length - b.length);
 
     return classNames; 
 };
