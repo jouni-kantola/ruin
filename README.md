@@ -1,2 +1,2 @@
 # ruin
-A post css processor that will ruin your css
+A CSS pre-processor that saves bytes over the wire by shortening names of CSS classes.
