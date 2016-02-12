@@ -1,38 +1,45 @@
-"use strict";
-
 /**
 * Returns an array with valid CSS class names that are between 1 and 3 chars long.
 *
-* In plain code:
+* Return value in pseudo code:
 * [
-*    "A00",
-*    "A01",
+*    "A",
+*    "B",
 *    ...
 *    "Z__",
 * ]
 **/
 module.exports = function() {
-    let classNames = [],
-        digits = [],
-        letters = [],
-        hyphenAndUnderscore = ["-", "_"],
-        charsFromCharCodes = require("./chars-from-char-codes");
+    "use strict";
 
-    digits = charsFromCharCodes("0".charCodeAt(0), "9".charCodeAt(0));
-    letters = charsFromCharCodes("A".charCodeAt(0), "Z".charCodeAt(0));
-    letters = letters.concat(charsFromCharCodes("a".charCodeAt(0), "z".charCodeAt(0)));
+    let charRange = require("./char-range"),
+        digits = charRange("0", "9"),
+        letters = charRange("A", "Z").concat(charRange("a", "z")),
+        hyphenAndUnderscore = ["-", "_"];
 
     let validFirstChars = letters,
         allValidChars = digits.concat(letters).concat(hyphenAndUnderscore);
 
+    let classNames = [];
+
     for (let firstChar of validFirstChars) {
+        // Class names that are 1 char in length
+        classNames.push(firstChar);
+
         for (let secondChar of allValidChars) {
+            // Class names that are 2 chars in length
+            classNames.push([firstChar, secondChar].join(""));
+
             for (let thirdChar of allValidChars) {
-                let className = [firstChar, secondChar, thirdChar];
-                classNames.push(className.join(""));
+                // Class names that are 3 chars in length
+                classNames.push(
+                    [firstChar, secondChar, thirdChar].join("")
+                );
             }
         }
     }
+
+    // TODO: sort by length
 
     return classNames; 
 };
