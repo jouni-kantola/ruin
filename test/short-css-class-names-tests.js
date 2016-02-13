@@ -10,13 +10,11 @@
         });
 
         it("should not contain names with more than 3 chars", function() {
-            let hasLongName = classNames.some((name) => name.length > 3);
-            hasLongName.should.equal(false);
+            should.not.exist(classNames.find(name => name.length > 3));
         });
         
         it("should not contain names that begin with a digit", function() {
-            let hasInvalidClassNames = classNames.some((name) => /^[0-9]/.test(name));
-            hasInvalidClassNames.should.equal(false);
+            should.not.exist(classNames.find(name => /^[0-9]/.test(name)));
         });
     });
 })();
