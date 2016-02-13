@@ -14,8 +14,8 @@ module.exports = function(from, to) {
         end = Math.max(charCodeOfFrom, charCodeOfTo);
 
     for (let i = start; i <= end; i++) {
-        chars.push(String.fromCharCode(i))
+        chars.push(String.fromCharCode(i));
     }
 
     return chars;
-}
+};

@@ -35,7 +35,7 @@ module.exports = function() {
                     // Class names that are 3 chars in length
                     [firstChar, secondChar, thirdChar].join("")
                 );
-            })
+            });
         });
     });
 
