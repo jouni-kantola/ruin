@@ -1,6 +1,7 @@
 const gulp = require('gulp');
 const mocha = require('gulp-mocha');
 const watch = require('gulp-watch');
+const jshint = require('gulp-jshint');
 
 const config = {
     paths: {
@@ -14,9 +15,15 @@ gulp.task('test', function() {
     .pipe(mocha({ reporter: 'dot' }));
 });
 
+gulp.task('lint', function() {
+  return gulp.src(config.paths.scripts)
+    .pipe(jshint())
+    .pipe(jshint.reporter('default'));
+});
+
 gulp.task('watch', function() {
-    gulp.watch(config.paths.scripts, ['test']);
+    gulp.watch(config.paths.scripts, ['lint', 'test']);
     gulp.watch(config.paths.tests, ['test']);
 });
 
-gulp.task('default', ['test', 'watch']);
+gulp.task('default', ['lint', 'watch']);
