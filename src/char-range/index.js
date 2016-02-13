@@ -3,7 +3,7 @@
 *
 * Example: from = "A", to = "C" returns ["A", "B", "C"]
 **/
-module.exports = function(from, to) {
+module.exports = (from, to) => {
     "use strict";
 
     let chars = [];

@@ -12,7 +12,7 @@
 module.exports = function() {
     "use strict";
 
-    let charRange = require("./char-range"),
+    let charRange = require("../char-range"),
         digits = charRange("0", "9"),
         letters = charRange("A", "Z").concat(charRange("a", "z")),
         hyphenAndUnderscore = ["-", "_"];
@@ -21,20 +21,18 @@ module.exports = function() {
         allValidChars = digits.concat(letters).concat(hyphenAndUnderscore);
 
     let classNames = [];
-
-    validFirstChars.map((firstChar) => {
+    
+    validFirstChars.forEach(firstChar => {
         // Class names that are 1 char in length
         classNames.push(firstChar);
 
-        allValidChars.map((secondChar) => {
+        allValidChars.forEach(secondChar => {
             // Class names that are 2 chars in length
             classNames.push([firstChar, secondChar].join(""));
 
-            allValidChars.map((thirdChar) => {
-                classNames.push(
-                    // Class names that are 3 chars in length
-                    [firstChar, secondChar, thirdChar].join("")
-                );
+            allValidChars.forEach(thirdChar => { 
+                // Class names that are 3 chars in length
+                classNames.push([firstChar, secondChar, thirdChar].join(""));
             });
         });
     });
