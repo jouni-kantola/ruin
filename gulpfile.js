@@ -7,7 +7,7 @@ const config = {
         tests: ['test/**/*.js'],
         scripts: ['src/**/*.js']   
     }
-}
+};
 
 gulp.task('test', function() {
   return gulp.src(config.paths.tests, {read: false})
