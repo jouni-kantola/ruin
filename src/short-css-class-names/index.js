@@ -22,22 +22,22 @@ module.exports = function() {
 
     let classNames = [];
 
-    for (let firstChar of validFirstChars) {
+    validFirstChars.map((firstChar) => {
         // Class names that are 1 char in length
         classNames.push(firstChar);
 
-        for (let secondChar of allValidChars) {
+        allValidChars.map((secondChar) => {
             // Class names that are 2 chars in length
             classNames.push([firstChar, secondChar].join(""));
 
-            for (let thirdChar of allValidChars) {
-                // Class names that are 3 chars in length
+            allValidChars.map((thirdChar) => {
                 classNames.push(
+                    // Class names that are 3 chars in length
                     [firstChar, secondChar, thirdChar].join("")
                 );
-            }
-        }
-    }
+            })
+        });
+    });
 
     // Shortest names first
     classNames.sort((a, b) => a.length - b.length);
