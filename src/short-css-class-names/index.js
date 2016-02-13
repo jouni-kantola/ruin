@@ -9,9 +9,9 @@
 *    "Z__",
 * ]
 **/
-module.exports = function() {
+module.exports = function(rangeLength) {
     "use strict";
-
+    
     let charRange = require("../char-range"),
         digits = charRange("0", "9"),
         letters = charRange("A", "Z").concat(charRange("a", "z")),
@@ -22,17 +22,23 @@ module.exports = function() {
 
     let classNames = [];
     
+    function tryAdd(className){
+        if(classNames.length >= rangeLength) return false;
+        classNames.push(className);
+        return true;
+    }
+    
     validFirstChars.forEach(firstChar => {
         // Class names that are 1 char in length
-        classNames.push(firstChar);
+        if(!tryAdd(firstChar)) return;
 
         allValidChars.forEach(secondChar => {
             // Class names that are 2 chars in length
-            classNames.push([firstChar, secondChar].join(""));
+            if(!tryAdd([firstChar, secondChar].join(""))) return;            
 
             allValidChars.forEach(thirdChar => { 
                 // Class names that are 3 chars in length
-                classNames.push([firstChar, secondChar, thirdChar].join(""));
+                if(!tryAdd([firstChar, secondChar, thirdChar].join(""))) return;                
             });
         });
     });
