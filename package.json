@@ -6,7 +6,9 @@
   "directories": {
     "test": "test"
   },
-  "dependencies": {},
+  "dependencies": {
+    "glob": "^7.0.0"
+  },
   "devDependencies": {
     "chai": "^3.5.0",
     "gulp": "^3.9.1",
