@@ -1,0 +1,1 @@
+const ruin = require("./src/ruin");
