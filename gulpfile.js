@@ -5,8 +5,8 @@ const jshint = require('gulp-jshint');
 
 const config = {
     paths: {
-        tests: ['test/**/*.js'],
-        scripts: ['src/**/*.js']   
+        tests: ["lib/**/test/*.js"],
+        scripts: ["lib/**/*.js"]
     }
 };
 
