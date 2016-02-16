@@ -1,1 +1,1 @@
-const ruin = require("./src/ruin");
+const ruin = require("./lib/ruin");

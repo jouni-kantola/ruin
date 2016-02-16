@@ -15,7 +15,8 @@
     "gulp-jshint": "^2.0.0",
     "gulp-mocha": "^2.2.0",
     "gulp-watch": "^4.3.5",
-    "jshint": "^2.9.1"
+    "jshint": "^2.9.1",
+    "mock-fs": "^3.7.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
