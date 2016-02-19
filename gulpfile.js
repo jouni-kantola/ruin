@@ -1,5 +1,6 @@
 const gulp = require('gulp');
 const mocha = require('gulp-mocha');
+const ava = require("gulp-ava");
 const watch = require('gulp-watch');
 const jshint = require('gulp-jshint');
 
@@ -11,8 +12,8 @@ const config = {
 };
 
 gulp.task('test', function() {
-  return gulp.src(config.paths.tests, {read: false})
-    .pipe(mocha({ reporter: 'dot' }));
+  const files = gulp.src(config.paths.tests);
+    return files.pipe(ava());
 });
 
 gulp.task('lint', function() {
