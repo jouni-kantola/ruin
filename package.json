@@ -1,11 +1,9 @@
 {
   "name": "ruin",
   "version": "0.0.1",
-  "description": "A post css processor that will ruin your css",
+  "description": "CSS post-processor that saves bytes over the wire by shortening names of CSS classes.",
   "main": "index.js",
-  "directories": {
-    "test": "ava lib/**/test/*.js"
-  },
+  "directories": {},
   "dependencies": {
     "glob": "^7.0.0"
   },
@@ -18,19 +16,19 @@
     "mock-fs": "^3.7.0"
   },
   "scripts": {
-    "test": "ava"
+    "test": "ava lib/**/test/*.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/davidxcheng/ruin.git"
+    "url": "https://github.com/davidxcheng/ruin.git"
   },
   "keywords": [
     "css"
   ],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/davidxcheng/ruin/issues"
   },
-  "homepage": "https://github.com/davidxcheng/ruin#readme"
+  "homepage": "https://github.com/davidxcheng/ruin"
 }
