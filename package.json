@@ -1,6 +1,6 @@
 {
   "name": "ruin",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "CSS post-processor that saves bytes over the wire by shortening names of CSS classes.",
   "main": "index.js",
   "directories": {},
