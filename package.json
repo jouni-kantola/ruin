@@ -5,7 +5,8 @@
   "main": "index.js",
   "directories": {},
   "dependencies": {
-    "glob": "^7.0.0"
+    "glob": "^7.0.0",
+    "css-classes": "^1.0.0"
   },
   "devDependencies": {
     "ava": "^0.12.0",
