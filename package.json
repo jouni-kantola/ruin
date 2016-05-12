@@ -17,7 +17,8 @@
     "mock-fs": "^3.7.0"
   },
   "scripts": {
-    "test": "ava lib/**/test/*.js"
+    "test": "ava lib/**/test/*.js",
+    "postinstall": "ln -s -f ../../hooks/pre-push-ensure-test .git/hooks/pre-push"
   },
   "repository": {
     "type": "git",
