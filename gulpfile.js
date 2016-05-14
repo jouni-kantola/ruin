@@ -32,7 +32,8 @@ gulp.task("lint", () => {
                 "eqeqeq": 1,
                 "camelcase": 1,
                 "comma-dangle": 2,
-                "quotes": [1, "double"]
+                "quotes": [1, "double"],
+                "keyword-spacing": [1, { "after": true }]
             },
             envs: [
                 "node",
